@@ -1,0 +1,27 @@
+.navbar{
+    background: #28a644;
+}
+.nav-link , .navbar-brand{
+    color: #f4f4f4;
+    cursor: pointer;
+}
+.nav-link{
+    margin-right: 1em !important;
+}
+.nav-link:hover{
+    background: #0a6e03;
+    color: #f4f4f4;
+    border-radius: 5px;
+}
+.navbar-collapse{
+    justify-content: flex-end;
+}
+.navbar-toggler{
+    background:#fff !important;
+}
+.btn{
+    color: #f4f4f4;
+}
+table tr td:hover{
+    cursor: pointer;
+}
