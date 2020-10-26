@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ProductService {
     ProductDAO productDAO = new ProductDAOImpl();
-    public List<ProductViewEntity>ProductList(){
+    public List<ProductViewEntity> productList(){
         return productDAO.getProductViewList();
     }
 }
