@@ -80,4 +80,26 @@ public class UserOrderDAOImpl implements UserOrderDAO {
             }
         }
     }
+
+    @Override
+    public boolean delById(Integer id) {
+        Session session = null;
+        try {
+            session = getSession();
+            session.beginTransaction();
+            String hql = "delete from UserOrderEntity where idorder = :id";
+            Query query = session.createQuery(hql);
+            query.setParameter("id",id);
+            query.executeUpdate();
+            session.getTransaction().commit();
+            return true ;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (session != null && session.isOpen()) {
+                session.close();
+            }
+        }
+    }
 }

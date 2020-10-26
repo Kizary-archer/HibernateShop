@@ -14,7 +14,7 @@
     </thead>
     <tbody>
     <c:forEach var="order" items="${UserOrders}">
-        <tr onclick="document.location = './viewAgent?idAgent=${order.idorder}'">
+        <tr>
             <td><c:out value="${order.idorder}"/></td>
             <td><c:out value="${order.nameprod}"/></td>
             <td><c:out value="${order.typename}"/></td>
@@ -22,6 +22,7 @@
             <td><c:out value="${order.price}"/></td>
             <td><c:out value="${order.count}"/></td>
             <td><c:out value="${order.finalprice}"/></td>
+            <td><button type="submit" class="btn btn-danger m-1" onclick = "document.location ='./delOrder?idOrder=${order.idorder}'">Удалить</button></td>
         </tr>
     </c:forEach>
     </tbody>

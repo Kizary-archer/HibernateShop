@@ -18,8 +18,6 @@
             <td><c:out value="${product.typename}"/></td>
             <td><c:out value="${product.namemanuf}"/></td>
             <td><c:out value="${product.price}"/></td>
-            <td><c:out value="${product.price}"/></td>
-            <td><c:out value="${product.price}"/></td>
         </tr>
     </c:forEach>
     </tbody>

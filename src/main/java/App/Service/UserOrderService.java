@@ -24,4 +24,7 @@ public class UserOrderService {
     public boolean addOrder(UserOrderEntity userOrderEntity) {
         return userOrderDAO.add(userOrderEntity);
     }
+    public boolean delOrder(Integer id) {
+              return userOrderDAO.delById(id);
+    }
 }

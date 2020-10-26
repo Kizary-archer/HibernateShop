@@ -9,6 +9,7 @@ public interface UserOrderDAO extends IDAO<UserOrderEntity> {
     List<UserOrderViewEntity> getUserOrderViewList(UserEntity userEntity);
     List<ManufactureEntity> getManufactureList();
     List<ProdTypeEntity> getProdTypeList();
+    boolean delById(Integer id);
 
 
 }

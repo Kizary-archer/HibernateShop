@@ -16,7 +16,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet(urlPatterns = {"/addOrder", "/listUserOrder"})
+@WebServlet(urlPatterns = {"/addOrder", "/listUserOrder","/delOrder"})
 public class OrderServlet extends HttpServlet {
 
 
@@ -32,6 +32,9 @@ public class OrderServlet extends HttpServlet {
             userOrderEntity.setProduct(Integer.parseInt(request.getParameter("idProduct")));
             userOrderEntity.setCount(1);
             orderService.addOrder(userOrderEntity);
+        }
+        if (request.getServletPath().equals("/delOrder")) {
+            orderService.delOrder(Integer.parseInt(request.getParameter("idOrder")));
         }
             List<UserOrderViewEntity> orderList = orderService.getUserOrderViewList((UserEntity) session.getAttribute("authUser"));
             request.setAttribute("UserOrders", orderList);
