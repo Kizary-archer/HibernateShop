@@ -12,11 +12,13 @@
     </thead>
     <tbody>
     <c:forEach var="product" items="${productList}">
-        <tr onclick="document.location = './addOrder?idOrder=${product.idproduct}'">
+        <tr onclick="document.location = './addOrder?idProduct=${product.idproduct}'">
             <td><c:out value="${product.idproduct}"/></td>
             <td><c:out value="${product.nameprod}"/></td>
             <td><c:out value="${product.typename}"/></td>
             <td><c:out value="${product.namemanuf}"/></td>
+            <td><c:out value="${product.price}"/></td>
+            <td><c:out value="${product.price}"/></td>
             <td><c:out value="${product.price}"/></td>
         </tr>
     </c:forEach>

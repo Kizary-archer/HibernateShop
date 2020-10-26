@@ -21,7 +21,7 @@ public class UserOrderDAOImpl implements UserOrderDAO {
             session.beginTransaction();
             String hql = "select distinct  uov " +
                     "from UserOrderViewEntity uov " +
-                    "where uov.user = :idUser";
+                    "where uov.shuser = :idUser";
             Query query = session.createQuery(hql);
             query.setParameter("idUser", userEntity.getIduser());
             List<UserOrderViewEntity> res = query.getResultList();

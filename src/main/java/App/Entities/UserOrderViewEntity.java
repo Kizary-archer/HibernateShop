@@ -7,7 +7,7 @@ import java.util.Objects;
 @Table(name = "userorderview", schema = "public", catalog = "Shop")
 public class UserOrderViewEntity {
     private Integer idorder;
-    private Integer user;
+    private Integer shuser;
     private String nameprod;
     private String typename;
     private String namemanuf;
@@ -28,12 +28,12 @@ public class UserOrderViewEntity {
 
     @Basic
     @Column(name = "user", nullable = true)
-    public Integer getUser() {
-        return user;
+    public Integer getShuser() {
+        return shuser;
     }
 
-    public void setUser(Integer user) {
-        this.user = user;
+    public void setShuser(Integer user) {
+        this.shuser = user;
     }
 
     @Basic
@@ -103,7 +103,7 @@ public class UserOrderViewEntity {
         if (o == null || getClass() != o.getClass()) return false;
         UserOrderViewEntity that = (UserOrderViewEntity) o;
         return Objects.equals(idorder, that.idorder) &&
-                Objects.equals(user, that.user) &&
+                Objects.equals(shuser, that.shuser) &&
                 Objects.equals(nameprod, that.nameprod) &&
                 Objects.equals(typename, that.typename) &&
                 Objects.equals(namemanuf, that.namemanuf) &&
@@ -114,6 +114,6 @@ public class UserOrderViewEntity {
 
     @Override
     public int hashCode() {
-        return Objects.hash(idorder, user, nameprod, typename, namemanuf, price, count, finalprice);
+        return Objects.hash(idorder, shuser, nameprod, typename, namemanuf, price, count, finalprice);
     }
 }

@@ -2,10 +2,7 @@ package App.Service;
 
 import App.DAO.IDAO.UserOrderDAO;
 import App.DAO.UserOrderDAOImpl;
-import App.Entities.ManufactureEntity;
-import App.Entities.ProdTypeEntity;
-import App.Entities.UserEntity;
-import App.Entities.UserOrderViewEntity;
+import App.Entities.*;
 
 import java.util.List;
 
@@ -22,5 +19,9 @@ public class UserOrderService {
 
     public List<ProdTypeEntity> getProdTypeList() {
         return userOrderDAO.getProdTypeList();
+    }
+
+    public boolean addOrder(UserOrderEntity userOrderEntity) {
+        return userOrderDAO.add(userOrderEntity);
     }
 }

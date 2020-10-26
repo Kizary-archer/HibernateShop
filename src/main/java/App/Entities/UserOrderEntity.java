@@ -7,7 +7,7 @@ import java.util.Objects;
 @Table(name = "userorder", schema = "public", catalog = "Shop")
 public class UserOrderEntity {
     private Integer idorder;
-    private Integer user;
+    private Integer shuser;
     private Integer product;
     private Integer count;
     private UserEntity userByUser;
@@ -25,13 +25,13 @@ public class UserOrderEntity {
     }
 
     @Basic
-    @Column(name = "user", nullable = false)
-    public Integer getUser() {
-        return user;
+    @Column(name = "shuser", nullable = false)
+    public Integer getShuser() {
+        return shuser;
     }
 
-    public void setUser(Integer user) {
-        this.user = user;
+    public void setShuser(Integer user) {
+        this.shuser = user;
     }
 
     @Basic
@@ -60,18 +60,18 @@ public class UserOrderEntity {
         if (o == null || getClass() != o.getClass()) return false;
         UserOrderEntity that = (UserOrderEntity) o;
         return Objects.equals(idorder, that.idorder) &&
-                Objects.equals(user, that.user) &&
+                Objects.equals(shuser, that.shuser) &&
                 Objects.equals(product, that.product) &&
                 Objects.equals(count, that.count);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idorder, user, product, count);
+        return Objects.hash(idorder, shuser, product, count);
     }
 
     @ManyToOne
-    @JoinColumn(name = "user", referencedColumnName = "iduser", nullable = false,insertable = false, updatable = false)
+    @JoinColumn(name = "shuser", referencedColumnName = "iduser", nullable = false,insertable = false, updatable = false)
     public UserEntity getUserByUser() {
         return userByUser;
     }
