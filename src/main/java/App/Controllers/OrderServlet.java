@@ -16,13 +16,12 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 
-@WebServlet(urlPatterns = {"/addOrder", "/listUserOrder","/delOrder"})
+@WebServlet(urlPatterns = {"/addOrder", "/listUserOrder", "/delOrder"})
 public class OrderServlet extends HttpServlet {
 
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = null;
         HttpSession session = request.getSession();
         UserOrderService orderService = new UserOrderService();
         if (request.getServletPath().equals("/addOrder")) {
@@ -36,11 +35,9 @@ public class OrderServlet extends HttpServlet {
         if (request.getServletPath().equals("/delOrder")) {
             orderService.delOrder(Integer.parseInt(request.getParameter("idOrder")));
         }
-            List<UserOrderViewEntity> orderList = orderService.getUserOrderViewList((UserEntity) session.getAttribute("authUser"));
-            request.setAttribute("UserOrders", orderList);
-            requestDispatcher = request.getRequestDispatcher("view/listUserOrder.jsp");
-
-        assert requestDispatcher != null;
+        List<UserOrderViewEntity> orderList = orderService.getUserOrderViewList((UserEntity) session.getAttribute("authUser"));
+        request.setAttribute("UserOrders", orderList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/listUserOrder.jsp");
         requestDispatcher.forward(request, response);
     }
 }
